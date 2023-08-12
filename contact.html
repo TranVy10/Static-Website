@@ -1,0 +1,132 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 1
+Author: Tran Pham Quoc Vy
+ID: s4011912
+Acknowledgement: W3School, Youtube, RMIT Lecture slides -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/open-book.png" type="image/icon type">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+          <input type="checkbox" id="show-menu">
+          <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+          <div class="content">
+            <div class="logo">
+                <a href="../index.html"><img src="../images/open-book.png"></a>
+                <div class="heading">
+                    <h1 style="color: white;">TRAN VY</h1>
+                    <h1>BOOK STORE</h1>
+                </div>
+                
+            </div>
+            <!-- <div style="width: 50%;">Hello</div> -->
+            <div class="links-contain">
+                <ul class="links">
+                    <li><a href="../index.html" class="underlined">HOME</a></li>
+                    <li><a href="../superheroes.html" class="underlined">SUPERHEROES</a></li>
+                    <li><a href="../sports.html" class="underlined">SPORTS</a></li>
+                    <li><a href="../contact.html" class="underlined">CONTACT</a></li>
+                    <li></li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <marquee behavior="" direction="left">
+        <p><span style="padding-left: 100px;">TRAN VY BOOK STORE </span ><span style="padding-left: 30px;">TRAN VY BOOK STORE </span><span style="padding-left: 30px;">TRAN VY BOOK STORE </span></p>
+    </marquee>
+    <div class="contact_form">
+        <div class="title">
+            <h1>
+                Contact us
+            </h1>
+        </div>
+        <form>
+            <select name="contact-purpose" id="contact-purpose" required>
+                <option value="none">Choose a purpose</option>
+                <option value="sell">I want to sell books</option>
+                <option value="buy">I want to buy books</option>
+            </select>
+            <div class="formInfo">
+                <div class="inputfield">
+                    <label class="name" for="firstname">Firstname</label>
+                    <input id="firstname" type="text" name="name" class="name"
+                            placeholder="Please enter your firstname" required="required">
+                </div>
+                <div class="inputfield">
+                    <label class="name" for="lastname">Lastname</label>
+                    <input id="formlastname" type="text" name="surname" class="name"
+                            placeholder="Please enter your lastname" required="required">
+                </div>
+                <div class="inputfield">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" class="contactinfo"
+                            placeholder="Please enter your email" required="required">
+                </div>
+
+                <div class="inputfield">
+                    <label for="phone">Phone</label>
+                    <input id="phone" type="tel" name="phone" class="contactinfo"
+                            placeholder="Please enter your phone" required="required">
+                </div>
+                <label>Contact preference:</label>
+                <div>
+
+                    <label for="byemail">By email</label>
+                    <input type="checkbox" name="byemail" id="byemail" value="email">
+                </div>
+
+                <div>
+                    <label for="byphone">By phone</label>
+                    <input type="checkbox" name="byphone" id="byphone" value="phone">
+                </div>
+                <label>Receive weekly newsletter:</label>
+                <div>
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="newsletter" id="yes" value="yes" checked>
+                </div>
+                <div>
+                    <label for="no">No</label>
+                    <input type="radio" name="newsletter" id="no" value="no">
+                </div>
+            </div>
+            <div class="form_note">
+                <label for="notes">Notes:</label><br>
+                <textarea name="notes" id="notes"></textarea>
+            </div>
+            <div class="button">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <marquee behavior="" direction="left">
+        <p><span style="padding-left: 100px;">TRAN VY BOOK STORE </span ><span style="padding-left: 30px;">TRAN VY BOOK STORE </span><span style="padding-left: 30px;">TRAN VY BOOK STORE </span></p>
+    </marquee>
+    <footer class="footer">
+        <div class="footer_links">
+            <a>|</a>
+            <a href="../#">About Us</a>
+            <a>|</a>
+            <a href="../#">Privacy Policy</a>
+            <a>|</a>
+            <a href="../#">Terms</a>
+            <a>|</a>
+            <a href="../#">Copyright</a>
+            <a>|</a>
+            <a href="../contact.html"> Contact Us</a>
+            <a>|</a>
+        <div>
+    </footer>
+</body>
+</html>

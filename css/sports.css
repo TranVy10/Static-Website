@@ -1,0 +1,546 @@
+/* RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 1
+Author: Tran Pham Quoc Vy
+ID: s4011912
+Acknowledgement: W3School, Youtube, RMIT Lecture slides */
+body{
+    margin:0;
+    padding:0;
+}
+/* header{
+    display: flex;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+#logo{
+    width: 35%;
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    display: flex;
+}
+#logo h1{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: max-content;
+    padding-left: 10px;
+    color: white;
+}
+#logo img{
+    width: 100px;
+    vertical-align: bottom;
+    padding-left: 100px;
+}
+.space{
+    width: 50%;
+}
+nav {
+    width: max-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: white;
+    border-radius: 15px;
+    border: 3px black solid;
+}
+header nav ul{
+    display: flex;
+    list-style: none;
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+header nav ul li{
+    padding-right: 15px;
+}
+header nav ul li a{
+    display: block;
+    font-size: 17px;
+    font-family: monospace;
+    text-decoration: none;
+    color: black;
+} */
+.wrapper{
+    /* background: #171c24; */
+    background-color: black;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  .wrapper nav{
+    position: relative;
+    display: flex;
+    /* max-width: calc(100% - 200px); */
+    width: 100%;
+    margin: 0 auto;
+    /* height: 70px; */
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  
+    height: max-content;
+  }
+  nav .content .links-contain{
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  nav .content .links{
+    margin-left: 80px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    background-color: #fff;
+    height: max-content;
+    width: max-content;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .content .logo {
+    width: 70%;
+    max-height: 58px;
+    display: flex;
+  }
+  .content .logo a{
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 10px;
+  }
+  .content .logo img{
+    width: 50px;
+    vertical-align: bottom;
+  }
+  .content .logo h1{
+    margin-bottom: auto;
+    margin-top: auto;
+    color: #fff;
+    max-height: 23px;
+    font-family: monospace;
+    font-size: 25px;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+  .content .links li{
+    list-style: none;
+    padding-left: 20px;
+    background-color: #fff;
+    max-height: 24px;
+  }
+  .content .links li a{
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    height:70px;
+    /* padding: 9px 17px; */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: monospace;
+    
+  }
+  /* .wrapper .search-icon, */
+  .wrapper .menu-icon{
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 70px;
+    width: 70px;
+    text-align: center;
+  }
+  .wrapper .menu-icon{
+    display: none;
+  }
+  .wrapper input[type="checkbox"]{
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px){
+    .wrapper .menu-icon{
+      display: block;
+    }
+    .wrapper #show-menu:checked ~ .menu-icon i::before{
+      content: "\f00d";
+    }
+    nav .content .links{
+      display: block;
+      position: fixed;
+      background: black;
+      height: 100%;
+      width: 100%;
+      top: 70px;
+      left: -100%;
+      margin-left: 0;
+      max-width: 350px;
+      overflow-y: auto;
+      padding-bottom: 100px;
+      transition: all 0.3s ease;
+      margin-top: -10px;
+    }
+    nav #show-menu:checked ~ .content .links{
+      left: 0%;
+    }
+    .content .links li{
+      margin: 15px 20px;
+      max-height: 54px;
+    }
+    .content .links li a{
+      line-height: 40px;
+      max-height: 40px;
+      font-size: 20px;
+      display: block;
+      padding: 8px 18px;
+      cursor: pointer;
+    }
+    .content .links ul{
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      background: none;
+      max-height: 0px;
+      overflow: hidden;
+    }
+  
+    .content .links ul li{
+      margin: 7px 20px;
+    }
+    .content .links ul li a{
+      font-size: 18px;
+      line-height: 30px;
+      border-radius: 5px!important;
+    }
+  }
+  .underlined{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+  }
+  .underlined::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+    transform: scaleX(0);
+  }
+  .underlined:hover::after {
+    transform: scaleX(1);
+  }
+.underlined{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+.underlined::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+    transform: scaleX(0);
+}
+.underlined:hover::after {
+    transform: scaleX(1);
+}
+/* CATEGORY ONE */
+.categoryOne{
+    font-family: monospace;
+    font-size: 25px;
+    background-color:white;
+    background-image: url(/images/superheroesbackground.jpg);
+    background-size: 100%;
+    padding-top: 5px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+} 
+
+.categoryOne h1 a{
+    font-family:monospace;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 10%;
+    border: 3px black solid;
+}
+
+.book_container{
+    display: flex;
+    max-width: 100%;
+    height: 80%;
+}
+.book_container figure{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+.book_container figcaption{
+    background-color: white;
+    color: black;
+    width: 100%;
+    height:auto;
+    /* padding-top: 10px; */
+    text-align: left;
+    padding-bottom: 10px;
+    /* padding-left: 15px; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    border-left: 3px black solid;
+    border-right: 3px black solid;
+    border-bottom: 3px black solid;
+}
+.book_container figcaption a{
+    color: white;
+    text-decoration: none;
+    
+}
+.book_container figure img{
+    width: 100%;
+    vertical-align: bottom;
+    border-left: 3px black solid;
+    border-right: 3px black solid;
+    border-top: 3px black solid;
+}
+.line1{
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.line2{
+    padding-left: 5%;
+}
+.line3{
+    padding-left: 5%;
+}
+.ten_percent{
+    width: 10%;
+}
+.categoryTwo{
+    font-family: monospace;
+    font-size: 25px;
+    background-color:white;
+    padding-top: 5px;
+    background-image: url(/images/sportbackground1.jpg);
+    background-size: 100%;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+} 
+
+.categoryTwo h1 a{
+    font-family:monospace;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 110px;
+    border: 3px black solid ;
+}
+
+.footer {
+    background: black;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 30px 50px;
+}
+.footer_links{
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+}
+.footer .footer_links a {
+    display:inline-block;
+    line-height: 1.8;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+}
+marquee{
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.space_span{
+    width: 100px;
+}
+hr{
+    border: 1px black solid;
+}
+.animation_button a{
+    display: block;
+    width: 70%;
+    margin-left: 5%;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: monospace;
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .5s;
+    background-color: black;
+}
+.animation_button a span{
+    position: relative;
+    z-index: 2;
+}
+.animation_button a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    transition: all .5s;
+}
+.animation_button a:hover{
+    color: black;
+}
+.animation_button a:hover:after{
+    width: 100%;
+}
+.categories{
+    font-family: monospace;
+    font-size: 25px;
+    background-color:white;
+    background-size: 100%;
+    padding-top: 5px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.categories h1 a{
+    font-family:monospace;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 110px;
+    border: 3px black solid;
+}
+#NFL{
+    background-image: url(/images/NFLbackground.jpg);
+    /* text-align: center; */
+}
+#NBA{
+    background-image: url(/images/NBAbackground.jpg);
+    /* text-align: center; */
+} 
+#Soccer{
+    background-image: url(/images/Soccerbackground.jpg);
+    /* text-align: center; */
+} 
+@media(max-width:768px) {
+    .book_container{
+        display: block;
+    }
+    header{
+        display: block;
+    }
+    header nav{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        width: 90%;
+    }
+    header nav ul li a{
+        font-size: 20px
+    }
+    #logo{
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #logo img{
+        vertical-align: bottom;
+        
+        padding-left: 50px;
+    }
+    header .space{
+        width: 0px;
+    }
+    .categories h1{
+        text-align: center;
+    }
+    .categories h1 a{
+        margin-left: 0px;
+    }
+    .book_container figure{
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .book_container figcaption{
+        background-color: white;
+        color: black;
+        width: 285px;
+        height: 200px;
+        padding-top: 10px;
+        text-align: left;
+        padding-left: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 15px;
+        border-left: 3px black solid;
+        border-right: 3px black solid;
+        border-bottom: 3px black solid;
+    }
+    .book_container figcaption a{
+        color: white;
+        text-decoration: none;
+    }
+    .book_container figure img{
+        width: 300px;
+        height: 450px;
+        vertical-align: bottom;
+        border-left: 3px black solid;
+        border-right: 3px black solid;
+        border-top: 3px black solid;
+    }
+    .footer .footer_links{
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer .footer_links a{
+        font-size: 8px;
+    }
+}
+
+@media (max-width:992px) and (min-width:769px) {
+    figcaption .line3{
+        display: none;
+    }
+    figcaption .line1{
+        font-size: 15px;
+    }
+    figcaption .line2{
+        font-size: 15px;
+    }
+}

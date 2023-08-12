@@ -1,0 +1,515 @@
+/* RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 1
+Author: Tran Pham Quoc Vy
+ID: s4011912
+Acknowledgement: W3School, Youtube, RMIT Lecture slides */
+body{
+    margin:0;
+    padding:0;
+}
+.wrapper{
+    /* background: #171c24; */
+    background-color: black;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  .wrapper nav{
+    position: relative;
+    display: flex;
+    /* max-width: calc(100% - 200px); */
+    width: 100%;
+    margin: 0 auto;
+    /* height: 70px; */
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  
+    height: max-content;
+  }
+  nav .content .links-contain{
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  nav .content .links{
+    margin-left: 80px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    background-color: #fff;
+    height: max-content;
+    width: max-content;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .content .logo {
+    width: 70%;
+    max-height: 58px;
+    display: flex;
+  }
+  .content .logo a{
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 10px;
+  }
+  .content .logo img{
+    width: 50px;
+    vertical-align: bottom;
+  }
+  .content .logo h1{
+    margin-bottom: auto;
+    margin-top: auto;
+    color: #fff;
+    max-height: 23px;
+    font-family: monospace;
+    font-size: 25px;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+  .content .links li{
+    list-style: none;
+    padding-left: 20px;
+    background-color: #fff;
+    max-height: 24px;
+  }
+  .content .links li a{
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    height:70px;
+    /* padding: 9px 17px; */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: monospace;
+    
+  }
+  /* .wrapper .search-icon, */
+  .wrapper .menu-icon{
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 70px;
+    width: 70px;
+    text-align: center;
+  }
+  .wrapper .menu-icon{
+    display: none;
+  }
+  .wrapper input[type="checkbox"]{
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px){
+    .wrapper .menu-icon{
+      display: block;
+    }
+    .wrapper #show-menu:checked ~ .menu-icon i::before{
+      content: "\f00d";
+    }
+    nav .content .links{
+      display: block;
+      position: fixed;
+      background: black;
+      height: 100%;
+      width: 100%;
+      top: 70px;
+      left: -100%;
+      margin-left: 0;
+      max-width: 350px;
+      overflow-y: auto;
+      padding-bottom: 100px;
+      transition: all 0.3s ease;
+      margin-top: -10px;
+    }
+    nav #show-menu:checked ~ .content .links{
+      left: 0%;
+    }
+    .content .links li{
+      margin: 15px 20px;
+      max-height: 54px;
+    }
+    .content .links li a{
+      line-height: 40px;
+      max-height: 40px;
+      font-size: 20px;
+      display: block;
+      padding: 8px 18px;
+      cursor: pointer;
+    }
+    .content .links ul{
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      background: none;
+      max-height: 0px;
+      overflow: hidden;
+    }
+  
+    .content .links ul li{
+      margin: 7px 20px;
+    }
+    .content .links ul li a{
+      font-size: 18px;
+      line-height: 30px;
+      border-radius: 5px!important;
+    }
+  }
+.underlined{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+.underlined::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+    transform: scaleX(0);
+}
+.underlined:hover::after {
+    transform: scaleX(1);
+}
+.footer-theme {
+    background: black;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 30px 50px;
+}
+.footer_links{
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+}
+.footer-theme .footer_links a {
+    display:inline-block;
+    line-height: 1.8;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+}
+marquee{
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.space_span{
+    width: 100px;
+}
+
+hr{
+    border: 1px black solid;
+}
+
+.bookDetailedPage{
+    width: calc(100%-6px);
+    height: auto;
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
+    /* border-radius: 25px; */
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex */
+    background-color: #FFCC66;
+}
+.bookDetailedPage p{
+    font-family: monospace;
+    font-size: 25px;
+    margin-left: 50px;
+    text-decoration: none;
+}
+.bookDetailedPage a{
+    text-decoration: none;
+    color: black;
+}
+/* .bookDetailedPage a:hover{
+    text-decoration: underline;
+} */
+.container{
+    display: flex;
+    width: 75%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bookCover{
+    width: 30%;
+}
+.bookCover img{
+    width: 100%;
+    height: auto;
+    border: 3px black solid;
+    margin-top: 20px;
+    /* margin-left: 50px; */
+}
+
+.bookImages{
+    width: 10%;
+    height: auto;   
+    /* border: 3px black solid; */
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.pics img{
+    width: 93%;
+    height: 33%;
+    border: 3px black solid;
+    margin: 3px;
+}
+.bookPrice{
+    width: 60%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+    /* border: 3px black solid; */
+    padding-left: 20px;
+    font-family: monospace;
+    font-size: 20px;
+}
+.description{
+    width: 75%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 3px black solid; */
+    /* padding: 20px; */
+    font-family: monospace;
+    display: flex;
+    padding-bottom: 30px;
+}
+.description .text{
+    width: 40%;
+    /* margin-left: 20px; */
+}
+.description .videos{
+    width: 60%;
+    /* padding-left: 40px; */
+    /* margin-left: 100px; */
+}
+.description .videos iframe{
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    border: 2px black solid;
+}
+.description h1{
+    width: 80%;
+    font-size: 30px;
+}
+.description p2{
+    width: 80%;
+    font-size: 15px;
+}
+.bookPrice hr{
+    width: 80%;
+    border: 1.5px black solid;
+    margin-left: 0px;
+}
+del{
+    font-size: 15px;
+}
+#quantityLabel{
+    font-size: 30px;
+}
+#quantity{
+    font-size: 25px;
+    width: 40px;
+}
+#buyNowButton{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+#buyNowButton:hover{
+    background-color: darkgrey;
+}
+
+
+@media (max-width:768px) {
+    header{
+        display: block;
+    }
+    header nav{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        width: 400px;
+    }
+    header nav ul li a{
+        font-size: 20px
+    }
+    #logo{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #logo img{
+        vertical-align: bottom;
+        
+        padding-left: 50px;
+        /* border: 3px black solid ; */
+    }
+    .bookDetailedPage{
+        text-align: center;
+        /* padding-left: -50px; */
+        width: 65%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        border: 3px solid black;
+        border-radius: 25px;
+    }
+    .bookDetailedPage p{
+        /* padding-left: -10px; */
+        margin-left: 0px;
+    }
+    p a{
+        font-size: 15px;
+    }
+    .bookCover{
+        width: 100%;
+    }
+    .bookCover img{
+        width: 100%;
+        height: 570px;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container{
+        display: block;
+    }
+    .bookImages{
+        display: flex;
+        width: 100%;
+        height: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bookImages img{
+        height: 200px;
+    }
+    .bookPrice{
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-left: 20px; */
+        /* border: 3px black solid; */
+        /* padding-left: 20px; */
+        font-family: monospace;
+        font-size: 15px;
+        padding-left: 0px;
+    }
+    .bookPrice h1{
+        text-align:left;
+        /* padding-left: 5px; */
+    }
+    .bookPrice h2{
+        text-align:left;
+        /* padding-left: 5px; */
+    }
+    .bookPrice hr{
+        width: 90%;
+        border: 1.5px black solid;
+        margin-left: 0px;
+    }
+    form{
+        text-align: left;
+        /* margin-left: 10px; */
+    }
+    #quantityLabel{
+        font-size: 20px;
+        text-align: left;
+    }
+    #quantity{
+        font-size: 20px;
+        width: 40px;
+    }
+    #buyNowButton{
+        width: 150px;
+        height: 40px;
+        font-size: 15px;
+        border-radius: 20px;
+    }
+    #buyNowButton:hover{
+        background-color: darkgrey;
+    }
+    .description{
+        width: 80%;
+        display: block;
+        /* padding-top: 30px; */
+    }
+    .description .text{
+        width: 100%;
+    }
+    .description .text h1{
+        width: 100%;
+        font-size: 30px;
+        text-align: left;
+    }
+    #story_content{
+        display: block;
+        text-align: left;
+        width: 100%;
+    }
+    .description .videos{
+        width: 100%;
+        padding-left: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .description .videos iframe{
+        width: 90%;
+        height: calc(auto+10px);
+        margin-top: 20px;
+        /* margin-left: -30px; */
+    }
+    .footer-theme .footer_links{
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-theme .footer_links a{
+        font-size: 10px;
+    }
+}
+@media (min-width:769px) and (max-width:992px) {
+    .bookDetailedPage{
+        width: 768px;
+        border: 3px solid black;
+        border-radius: 25px;
+    }
+    .container{
+        width: 100%;
+        /* padding: 10px; */
+    }
+    .bookCover{
+        width: 310px;
+        margin-left: 10px;
+    }
+    .bookImages{
+        width: 100px;
+    }
+    .description{
+        width: 90%;
+    }
+}
